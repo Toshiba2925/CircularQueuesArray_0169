@@ -29,6 +29,22 @@ class Queues
                 return; //1.b
             }
 
-            
-};
+            //2. cek apakah antrian kosong
+            if (FRONT == -1)
+            {
+                FRONT = 0; //2.A
+                REAR = 0; //2.B
+            }
+            else
+            {
+                // jika rear berada di posisi terakhir array, kembali ke awal array
+                if (REAR == max - 1)
+                    REAR = 0;
+                else
+                    REAR = REAR + 1;
+            }
+            queue_array[REAR] = num;
+        }
 
+        
+}
